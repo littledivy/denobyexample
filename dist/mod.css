@@ -1,0 +1,150 @@
+   /* CSS reset: http://meyerweb.com/eric/tools/css/reset/ */
+   #root, html, body, div, span, applet, object, iframe,
+   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+   a, abbr, acronym, address, big, cite, code,
+   del, dfn, em, img, ins, kbd, q, s, samp,
+   small, strike, strong, sub, sup, tt, var,
+   b, u, i, center,
+   dl, dt, dd, ol, ul, li,
+   fieldset, form, label, legend,
+   table, caption, tbody, tfoot, thead, tr, th, td,
+   article, aside, canvas, details, embed,
+   figure, figcaption, footer, header, hgroup,
+   menu, nav, output, ruby, section, summary,
+   time, mark, audio, video {
+       margin: 0;
+       padding: 0;
+       border: 0;
+       font-size: 100%;
+       font: inherit;
+       vertical-align: baseline;
+   }
+   article, aside, details, figcaption, figure,
+   footer, header, hgroup, menu, nav, section {
+       display: block;
+   }
+   body {
+       line-height: 1;
+       background-image: radial-gradient(circle at 1px 1px, black 1px, transparent 0);
+   }
+   ol, ul {
+       list-style: none;
+   }
+   blockquote, q {
+       quotes: none;
+   }
+   blockquote:before, blockquote:after,
+   q:before, q:after {
+       content: '';
+       content: none;
+   }
+   table {
+       border-collapse: collapse;
+       border-spacing: 0;
+   }
+   
+   /* Layout and typography */
+   body {
+       font-family: 'Georgia', serif;
+       font-size: 16px;
+       line-height: 20px;
+       color: #252519;
+   }
+   em {
+       font-style: italic;
+   }
+   a, a:visited {
+       color: #261a3b;
+   }
+   h2 {
+       font-size: 32px;
+       line-height: 40px;
+       margin-top: 40px;
+   }
+   h2 a {
+       text-decoration: none;
+   }
+   div.example {
+       width: 900px;
+       min-width: 900px;
+       max-width: 900px;
+       margin-left: auto;
+       margin-right: auto;
+       margin-bottom: 120px;
+   }
+   div.example table {
+       margin-top: 15px;
+       margin-bottom: 20px;
+   }
+   p.next {
+       margin-bottom: 20px;
+   }
+   p.footer {
+       color: grey;
+   }
+   p.footer a, p.footer a:visited {
+       color: grey;
+   }
+   div#intro {
+       width: 420px;
+       min-width: 420px;
+       max-width: 420px;
+       margin-left: auto;
+       margin-right: auto;
+       margin-bottom: 120px;
+   }
+   div#intro p {
+       padding-top: 20px;
+   }
+   div#intro ul {
+       padding-top: 20px;
+   }
+   table td {
+       border: 0;
+       outline: 0;
+   }
+   td.docs {
+       width: 420px;
+       max-width: 420px;
+       min-width: 420px;
+       min-height: 5px;
+       vertical-align: top;
+       text-align: left;
+   }
+   td.docs p {
+       padding-right: 5px;
+       padding-top: 5px;
+       padding-bottom: 15px;
+   }
+   td.code {
+       width: 480px;
+       max-width: 480px;
+       min-width: 480px;
+       padding-top: 5px;
+       padding-right: 5px;
+       padding-left: 5px;
+       padding-bottom: 5px;
+       vertical-align: top;
+       background: #f0f0f0;
+   }
+   td.code.leading {
+       padding-bottom: 11px;
+   }
+   td.code.empty {
+       background: #ffffff;
+   }
+   pre, code {
+       font-size: 14px; line-height: 18px;
+       font-family: 'Menlo', 'Monaco', 'Consolas', 'Lucida Console', monospace;
+   }
+   img.copy, img.run {
+     height: 16px;
+     width: 16px;
+     float: right
+   }
+   img.copy, img.run {
+     cursor: pointer;
+   }
+   img.copy {
+       margin-right: 4px;
+   }
