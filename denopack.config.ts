@@ -2,7 +2,6 @@ import {
   htmlTemplate,
   pluginCssBundle as css,
   pluginHtmlBundle as html,
-  pluginServe as serve,
   pluginTerserTransform as terser,
   useCache,
 } from "https://deno.land/x/denopack@0.10.0/mod.ts";
@@ -11,8 +10,6 @@ import type {
   RollupOptions,
   TemplateOpts,
 } from "https://deno.land/x/denopack@0.10.0/mod.ts";
-
-const isDev = !Deno.env.get("PROD");
 
 import type { Plugin } from "https://deno.land/x/denopack@0.10.0/deps.ts";
 
@@ -46,7 +43,7 @@ function string(): Plugin {
 }
 
 const config: RollupOptions = {
-  input: "./app.tsx",
+  input: "./src/app.tsx",
   plugins: [
     css({ output: "mod.css" }),
     string(),

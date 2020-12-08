@@ -1,8 +1,7 @@
 import React from "https://esm.sh/react";
 import exampleData from "./data.ts";
 import ReactMarkdown from "https://esm.sh/react-markdown";
-import Prism from "https://esm.sh/prismjs";
-
+import List from "./list.tsx";
 import {
   BrowserRouter as Router,
   Link,
@@ -18,13 +17,13 @@ let Examples = function () {
         <div className="example-grid">
           <div className="example-doc">
             <ReactMarkdown>
-              {exampleData[example].body}
+              {exampleData[example].data.body}
             </ReactMarkdown>
           </div>
           <div className="example-doc">
             <pre className="line-numbers">
               <code className="language-ts">
-                {exampleData[example].code}
+                {exampleData[example].data.code}
               </code>
             </pre>
           </div>
@@ -49,6 +48,7 @@ function App() {
                       <a href="https://deno.land/">Deno</a> by example
                     </p>
                   </h2>
+                  <List />
                 </main>
               </div>
             </Route>
