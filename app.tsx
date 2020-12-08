@@ -4,9 +4,7 @@ import ReactDOM from "https://esm.sh/react-dom";
 import App from "./post.tsx";
 
 ReactDOM.render(
-  <>
-    <App />
-  </>,
+  <App />,
   // deno-lint-ignore no-undef
   document.getElementById("root"),
 );

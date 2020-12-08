@@ -1,6 +1,7 @@
 import React from "https://esm.sh/react";
-import Data from "./data.ts";
+import exampleData from "./data.ts";
 import ReactMarkdown from "https://esm.sh/react-markdown";
+import Prism from "https://esm.sh/prismjs";
 
 import {
   BrowserRouter as Router,
@@ -11,19 +12,23 @@ import {
 
 let Examples = function () {
   let examples = [];
-  for(var a in Data) {
+  for (var example in exampleData) {
     examples.push(
-      <Route path={a}>
-        <table>
-          <tr>
-            <td class="docs">
-            <ReactMarkdown>{Data[a].body}</ReactMarkdown>
-            </td>
-            <td class="code leading">
-              {Data[a].code}
-            </td>
-          </tr>
-        </table>
+      <Route path={example}>
+        <div className="example-grid">
+          <div className="example-doc">
+            <ReactMarkdown>
+              {exampleData[example].body}
+            </ReactMarkdown>
+          </div>
+          <div className="example-doc">
+            <pre className="line-numbers">
+              <code className="language-ts">
+                {exampleData[example].code}
+              </code>
+            </pre>
+          </div>
+        </div>
       </Route>,
     );
   }
@@ -35,9 +40,19 @@ function App() {
     <>
       <Router>
         <div class="example" id="hello-world">
-          <h2><a href="/">Deno by Example</a>: Hello, World</h2>
           <Switch>
-          {Examples}
+            <Route exact path="/">
+              <div className="container">
+                <main className="main">
+                  <h2 className="title">
+                    <p>
+                      <a href="https://deno.land/">Deno</a> by example
+                    </p>
+                  </h2>
+                </main>
+              </div>
+            </Route>
+            {Examples}
           </Switch>
         </div>
       </Router>

@@ -3,3 +3,6 @@ build:
 
 serve:
 	cd dist && python ../tools/serve.py
+
+fmt:
+	deno fmt --ignore=dist/

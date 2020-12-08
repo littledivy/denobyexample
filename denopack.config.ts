@@ -29,13 +29,17 @@ function string(): Plugin {
     name: "denopack-plugin-string",
     async load(id) {
       if (id.startsWith("example:")) {
+        let exampleName = id.split("example:")[1];
         let content = await Deno.readTextFile(
-          id.replace("example:", "examples/") + ".md",
+          id.replace("example:", `examples/${exampleName}/`) + ".md",
         );
         let code = await Deno.readTextFile(
-          id.replace("example:", "examples/") + ".ts",
+          id.replace("example:", `examples/${exampleName}/`) + ".ts",
         );
-        return `export default { code:\`${code}\` , body:\`${content}\` };`;
+        let output = await Deno.readTextFile(
+          id.replace("example:", `examples/${exampleName}/`) + ".sh",
+        );
+        return `export default { code:\`${code}\` , body:\`${content}\`, output:\`${output}\` };`;
       }
     },
   } as Plugin;
